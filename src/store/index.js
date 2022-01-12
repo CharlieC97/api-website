@@ -21,10 +21,7 @@ export default createStore({
           : state.width.SIDEBAR_WIDTH
       }`;
     },
-    collapsedImage(state) {
-      return !state.collapsed
-        ? "src/assets/Signature_logo.png"
-        : "src/assets/Logo_col_one.png";
+    
     },
   },
 });
