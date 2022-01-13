@@ -9,10 +9,6 @@ import TopHeader from "./components/TopHeader.vue";
   <div :style="{ 'margin-left': $store.getters.sidebarWidth }">
     <router-view />
   </div>
-
-  <button @click="$store.commit('toggleCollapse')">PRESS HERE TO TOGGLE</button>
-  <h1>State of collapse: {{ $store.state.collapsed }}</h1>
-  <h1>Getters for sidebar width: {{ $store.getters.sidebarWidth }}</h1>
 </template>
 
 <style>

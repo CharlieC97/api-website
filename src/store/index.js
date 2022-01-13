@@ -21,7 +21,5 @@ export default createStore({
           : state.width.SIDEBAR_WIDTH
       }`;
     },
-    
-    },
   },
 });

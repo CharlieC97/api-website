@@ -5,7 +5,7 @@ const store = useStore();
 
 const menuLink = [
   {
-    linkTo: "home",
+    linkTo: "/",
     icon: "fas fa-home",
     text: "Homepage",
   },
@@ -15,9 +15,9 @@ const menuLink = [
     text: "Books",
   },
   {
-    linkTo: "movies",
+    linkTo: "imdb",
     icon: "fas fa-film",
-    text: "Movies",
+    text: "IMDB",
   },
 ];
 </script>
