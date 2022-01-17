@@ -1,32 +1,55 @@
 <script setup>
 import axios from "axios";
+import { onMounted, ref, onBeforeMount } from "vue";
 
-// axios
-//   .get("https://imdb-api.com/en/API/Search/k_4j2abh8m/inception")
-//   .then(function (response) {
-//     // handle success
-//     console.log(response);
-//   })
-//   .catch(function (error) {
-//     // handle error
-//     console.log(error);
-//   });
+let info = ref([]);
+
+// const getMovie = () =>
+//   axios
+//     .get("https://imdb-api.com/en/API/Search/k_4j2abh8m/inception")
+//     .then(function (response) {
+//       // handle success
+//       const info = response.data;
+//       console.log(response);
+//       console.log("AXIOS RUN");
+//       return info;
+//     })
+//     .catch(function (error) {
+//       // handle error
+//       console.log(error);
+//     });
 
 const getMovie = async () => {
   try {
-    const response = await axios.get(
+    const res = await axios.get(
       "https://imdb-api.com/en/API/Search/k_4j2abh8m/inception"
     );
-    console.log(response);
-    return response;
-  } catch (error) {
-    console.error(error);
+
+    console.log(res);
+  } catch (err) {
+    console.error(err);
   }
 };
-getMovie();
+
+// onBeforeMount(async () => {
+//   await axios
+//     .get("https://imdb-api.com/en/API/Search/k_4j2abh8m/inception")
+//     .then((response) => {
+//       // handle success
+//       info = response.data;
+//       console.log(response);
+//       console.log(info);
+//     })
+//     .catch((error) => {
+//       // handle error
+//       console.warn(error);
+//     });
+// });
+
+onMounted(getMovie());
 </script>
 
 <template>
   <h1>This is the IMDB Page</h1>
-  <p>{{ response }}</p>
+  <p>{{ info }}</p>
 </template>
